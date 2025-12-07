@@ -33,11 +33,6 @@ for i, (bar, val) in enumerate(zip(bars, importance)):
             f'{val*100:.1f}%', 
             ha='left', va='center', fontsize=16, fontweight='bold')
 
-# Add 1.8x annotation
-ax.annotate('1.8x more\nimportant', 
-            xy=(0.415, 1), xytext=(0.35, 0.3),
-            fontsize=14, fontweight='bold', color='#2C3E50',
-            arrowprops=dict(arrowstyle='->', lw=2, color='#2C3E50'))
 
 ax.set_xlabel('Combined Importance', fontsize=14, fontweight='bold')
 ax.set_title('Situation vs Strategy: What Matters More?', 
@@ -83,10 +78,6 @@ ax.set_xlim(0, 0.7)
 ax.set_xticks([0, 0.2, 0.4, 0.6])
 ax.set_xticklabels(['0%', '20%', '40%', '60%'])
 
-# Add insight text
-ax.text(0.35, -0.5, 'Distance dramatically affects conversion odds', 
-        fontsize=12, style='italic', ha='center',
-        bbox=dict(boxstyle='round,pad=0.5', facecolor='#ECF0F1', alpha=0.8))
 
 plt.tight_layout()
 plt.savefig('third_down_conversions.png', dpi=300, bbox_inches='tight', facecolor='white')
@@ -124,11 +115,7 @@ ax.set_title('Red Zone Efficiency: Run vs Pass\n(Inside 20-Yard Line)',
              fontsize=18, fontweight='bold', pad=20)
 ax.set_ylim(-0.1, 0.06)
 
-# Add insight annotation
-ax.annotate('Runs outperform\npasses by 0.106 EPA', 
-            xy=(0.5, 0.04), xytext=(0.5, 0.045),
-            fontsize=12, ha='center', fontweight='bold',
-            bbox=dict(boxstyle='round,pad=0.5', facecolor='#FFF3CD', alpha=0.9))
+
 
 plt.tight_layout()
 plt.savefig('redzone_run_vs_pass.png', dpi=300, bbox_inches='tight', facecolor='white')
@@ -197,14 +184,7 @@ for bar, val in zip(bars, accuracies):
             f'{val*100:.1f}%',
             ha='center', va='bottom', fontsize=16, fontweight='bold')
 
-# Add improvement annotations
-ax.annotate('+8.3%', xy=(1, 0.583), xytext=(1.5, 0.65),
-            fontsize=12, fontweight='bold', color='#3498DB',
-            arrowprops=dict(arrowstyle='->', lw=2, color='#3498DB'))
 
-ax.annotate('+9.1%', xy=(2, 0.591), xytext=(2.5, 0.66),
-            fontsize=12, fontweight='bold', color='#27AE60',
-            arrowprops=dict(arrowstyle='->', lw=2, color='#27AE60'))
 
 ax.set_ylabel('Accuracy', fontsize=14, fontweight='bold')
 ax.set_title('Model Performance Comparison\n(Test Set Accuracy)', 
